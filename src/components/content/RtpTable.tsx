@@ -22,10 +22,10 @@ export function RtpTable({ rows, caption }: RtpTableProps) {
         )}
         <thead>
           <tr className="border-b border-surface-border bg-surface-elevated">
-            <th className="px-4 py-3 text-sm font-semibold text-white">
+            <th scope="col" className="px-4 py-3 text-sm font-semibold text-white">
               Parameter
             </th>
-            <th className="px-4 py-3 text-sm font-semibold text-white">
+            <th scope="col" className="px-4 py-3 text-sm font-semibold text-white">
               Value
             </th>
           </tr>

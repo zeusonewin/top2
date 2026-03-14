@@ -13,7 +13,7 @@ export function SectionCard({ id, title, description, href, linkLabel }: Section
   return (
     <article
       id={id}
-      className={`group relative rounded-2xl border border-surface-border bg-surface-elevated/80 p-6 md:p-8 transition-all duration-300 hover:border-cta/30 hover:shadow-card ${id ? 'scroll-mt-24' : ''}`}
+      className={`group relative rounded-2xl border border-surface-border bg-surface-elevated p-6 md:p-8 transition-all duration-300 hover:border-cta/30 hover:shadow-card hover:scale-[1.02] ${id ? 'scroll-mt-24' : ''}`}
     >
       <h2 className="text-xl font-bold text-white md:text-2xl mb-3">
         {title}
