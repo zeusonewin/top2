@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Главная",
+    "gatesOfOlympus": "Gates of Olympus",
+    "strategy": "Стратегия",
+    "rtp": "RTP",
+    "multipliers": "Множители",
+    "bonusRound": "Бонусный раунд",
+    "howToWin": "Как выиграть",
+    "mistakes": "Ошибки",
+    "demo": "Демо",
+    "tips": "Советы",
+    "about": "О проекте",
+    "author": "Автор",
+    "disclaimer": "Дисклеймер",
+    "responsibleGaming": "Ответственная игра",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия"
+  },
+  "pillar": {
+    "title": "Gates of Olympus — полный гайд 2026: RTP, стратегия, бонусы",
+    "description": "Подробный обзор слота Gates of Olympus от Pragmatic Play: RTP 96.5%, множители до 500x, бонусный раунд. Стратегия и советы по игре."
+  },
+  "articles": {
+    "strategy": {
+      "title": "Gates of Olympus: стратегия и тактика игры",
+      "description": "Проверенная стратегия для Gates of Olympus: управление банкроллом, выбор ставок, когда играть бонусы."
+    },
+    "rtp": {
+      "title": "Gates of Olympus RTP и волатильность",
+      "description": "RTP 96.5%, волатильность и математика слота Gates of Olympus. Как это влияет на выплаты."
+    },
+    "multipliers": {
+      "title": "Множители в Gates of Olympus: как работают",
+      "description": "Множители до 500x в Gates of Olympus: механика тумблов, каскадные выигрыши, накопление множителей."
+    },
+    "bonusRound": {
+      "title": "Бонусный раунд Gates of Olympus: бесплатные спины",
+      "description": "Бонусный раунд и бесплатные спины в Gates of Olympus. Как активировать и максимизировать выигрыш."
+    },
+    "howToWin": {
+      "title": "Как выиграть в Gates of Olympus: руководство",
+      "description": "Проверенные способы увеличить шансы на выигрыш в Gates of Olympus. Советы от экспертов."
+    },
+    "mistakes": {
+      "title": "Типичные ошибки в Gates of Olympus",
+      "description": "Каких ошибок избегать при игре в Gates of Olympus. Частые заблуждения и как играть правильно."
+    },
+    "demo": {
+      "title": "Gates of Olympus демо: играть бесплатно",
+      "description": "Gates of Olympus в демо-режиме без регистрации. Практика и тестирование стратегий."
+    },
+    "tips": {
+      "title": "Советы по игре в Gates of Olympus",
+      "description": "Лучшие советы по Gates of Olympus: банкролл, ставки, выбор времени, управление рисками."
+    }
+  },
+  "cta": {
+    "play": "Играть в Gates of Olympus",
+    "playNow": "Играть сейчас",
+    "playForReal": "Играть на деньги",
+    "startPlaying": "Начать игру",
+    "tryNow": "Попробовать",
+    "register": "Регистрация",
+    "microcopy": "Регистрация у партнёра. 18+"
+  },
+  "footer": {
+    "disclaimer": "Дисклеймер",
+    "responsibleGaming": "Ответственная игра",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия использования",
+    "about": "О проекте",
+    "copyright": "© 2026. Информационный проект."
+  },
+  "common": {
+    "lastUpdated": "Обновлено",
+    "readMore": "Читать далее",
+    "relatedArticles": "Похожие статьи",
+    "tableOfContents": "Содержание",
+    "faqTitle": "Часто задаваемые вопросы"
+  }
+}

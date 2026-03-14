@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "gatesOfOlympus": "Gates of Olympus",
+    "strategy": "Strategy",
+    "rtp": "RTP",
+    "multipliers": "Multipliers",
+    "bonusRound": "Bonus Round",
+    "howToWin": "How to Win",
+    "mistakes": "Mistakes",
+    "demo": "Demo",
+    "tips": "Tips",
+    "about": "About",
+    "author": "Author",
+    "disclaimer": "Disclaimer",
+    "responsibleGaming": "Responsible Gaming",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "pillar": {
+    "title": "Gates of Olympus — Complete Guide 2026: RTP, Strategy, Bonuses",
+    "description": "In-depth Gates of Olympus slot review by Pragmatic Play: 96.5% RTP, multipliers up to 500x, bonus round. Strategy and gameplay tips."
+  },
+  "articles": {
+    "strategy": {
+      "title": "Gates of Olympus: Strategy and Gameplay Tactics",
+      "description": "Proven Gates of Olympus strategy: bankroll management, bet sizing, when to trigger bonuses."
+    },
+    "rtp": {
+      "title": "Gates of Olympus RTP and Volatility",
+      "description": "96.5% RTP, volatility and slot math of Gates of Olympus. How it affects payouts."
+    },
+    "multipliers": {
+      "title": "Gates of Olympus Multipliers: How They Work",
+      "description": "Multipliers up to 500x in Gates of Olympus: tumble mechanics, cascade wins, multiplier accumulation."
+    },
+    "bonusRound": {
+      "title": "Gates of Olympus Bonus Round: Free Spins",
+      "description": "Bonus round and free spins in Gates of Olympus. How to trigger and maximize wins."
+    },
+    "howToWin": {
+      "title": "How to Win at Gates of Olympus: Guide",
+      "description": "Proven ways to increase winning chances in Gates of Olympus. Expert tips."
+    },
+    "mistakes": {
+      "title": "Common Mistakes in Gates of Olympus",
+      "description": "Mistakes to avoid when playing Gates of Olympus. Common myths and how to play right."
+    },
+    "demo": {
+      "title": "Gates of Olympus Demo: Play Free",
+      "description": "Gates of Olympus in demo mode without registration. Practice and test strategies."
+    },
+    "tips": {
+      "title": "Gates of Olympus Gameplay Tips",
+      "description": "Best tips for Gates of Olympus: bankroll, bets, timing, risk management."
+    }
+  },
+  "cta": {
+    "play": "Play Gates of Olympus",
+    "playNow": "Play Now",
+    "playForReal": "Play for Real",
+    "startPlaying": "Start Playing",
+    "tryNow": "Try Now",
+    "register": "Register",
+    "microcopy": "Partner registration. 18+"
+  },
+  "footer": {
+    "disclaimer": "Disclaimer",
+    "responsibleGaming": "Responsible Gaming",
+    "privacy": "Privacy",
+    "terms": "Terms of Use",
+    "about": "About",
+    "copyright": "© 2026. Informational project."
+  },
+  "common": {
+    "lastUpdated": "Last updated",
+    "readMore": "Read more",
+    "relatedArticles": "Related articles",
+    "tableOfContents": "Table of contents",
+    "faqTitle": "Frequently asked questions"
+  }
+}

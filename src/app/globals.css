@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --bg: #0f172a;
+  --bg-elevated: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --cta: #fbbf24;
+  --cta-hover: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prose in articles — readable on dark */
+.prose-dark {
+  --tw-prose-body: #cbd5e1;
+  --tw-prose-headings: #f8fafc;
+  --tw-prose-links: #fbbf24;
+  --tw-prose-bold: #f8fafc;
+}
+
+.prose-dark h2 {
+  @apply border-b border-surface-border pb-2 mt-10 mb-4;
+}
+
+.prose-dark a {
+  @apply text-cta hover:text-cta-hover transition-colors;
+}
+
+/* Table of Contents */
+.toc-link {
+  @apply text-surface-muted hover:text-cta transition-colors text-sm py-1 block border-l-2 border-transparent hover:border-cta pl-3;
+}
+
+/* Callout blocks */
+.callout {
+  @apply rounded-xl border border-surface-border bg-surface-elevated/80 p-5;
+}
+
+/* Safe area for sticky CTA */
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
