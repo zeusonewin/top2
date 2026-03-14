@@ -68,7 +68,17 @@
   },
   "home": {
     "quickOverviewTitle": "Quick overview",
-    "quickOverview": "Gates of Olympus is one of Pragmatic Play's most popular slots. The game uses 6 reels with cluster pays: symbols tumble in cascades, and multipliers up to 500x accumulate and apply to wins. RTP 96.5% and high volatility mean less frequent but larger payouts. The bonus round awards 15 free spins when 4 or more scatters land; in the bonus, multipliers do not reset between spins. In our full guide you will find an RTP and volatility breakdown, bankroll management strategy, how multipliers work, and tips for demo play. We recommend learning the rules and trying the demo without registration first, then playing for real with a fixed bet of 1–2% of your bankroll.",
+    "quickOverview": "Gates of Olympus is one of Pragmatic Play's most popular slots. The game uses 6 reels with cluster pays: symbols tumble in cascades, and multipliers up to 500x accumulate and apply to wins. RTP 96.5% and high volatility mean less frequent but larger payouts. The bonus round awards 15 free spins when 4 or more scatters land; in the bonus, multipliers do not reset between spins.",
+    "whatIsTitle": "What is Gates of Olympus",
+    "whatIsText": "Gates of Olympus is a Pragmatic Play slot with a 6×5 grid, cluster pays and cascade mechanics. Multipliers up to 500x accumulate in both base game and free spins. High 96.5% RTP and volatility make it popular with players chasing big wins.",
+    "featureTitle": "What makes the slot popular",
+    "strategyTitle": "Strategy and tips",
+    "strategyText": "Manage your bankroll: 1–2% of bank per spin reduces the risk of a quick bust. Use demo mode to learn multiplier and tumble mechanics. In the bonus round multipliers stack — don't give up after the first big hits.",
+    "strategyTipsTitle": "Quick tips",
+    "demoTitle": "Try Gates of Olympus demo",
+    "demoSubtitle": "Play without registration and without risk. Learn the mechanics before playing for real.",
+    "ctaBlockTitle": "Start playing Gates of Olympus",
+    "ctaBlockSubtitle": "Redirect to a verified partner. Quick registration.",
     "sections": {
       "rtp": "RTP & payouts",
       "strategy": "Strategy",
@@ -80,7 +90,19 @@
     "paramsTitle": "Key parameters",
     "faqTitle": "Frequently asked",
     "readGuide": "Read guide",
-    "tocTitle": "On this page"
+    "tocTitle": "On this page",
+    "quickStats": {
+      "rtp": "RTP",
+      "maxMultiplier": "Max multiplier",
+      "volatility": "Volatility",
+      "bonusFeature": "Bonus"
+    },
+    "features": {
+      "multipliers": "Multipliers up to 500x in base and bonus. Stack between cascades.",
+      "freeSpins": "15 free spins for 4 scatters. Each extra scatter adds 5 more spins.",
+      "volatility": "High volatility: fewer but larger payouts.",
+      "bonus": "Tumbles, cascades, stacking multipliers. No paylines — clusters."
+    }
   },
   "footer": {
     "disclaimer": "Disclaimer",

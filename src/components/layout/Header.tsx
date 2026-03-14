@@ -5,11 +5,12 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 
 export async function Header() {
   const t = await getTranslations('nav');
+  const tCta = await getTranslations('cta');
   const locale = await getLocale();
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/[0.08] backdrop-blur-xl bg-[#0B0B0F]/80">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link
           href={`/${locale}`}
           className="text-xl font-bold text-white hover:text-slate-300 transition-colors"
@@ -34,7 +35,7 @@ export async function Header() {
           </Link>
           <LanguageSwitcher />
           <CtaButton variant="primary" className="!py-2 !px-5 !text-base" subid="header">
-            {t('gatesOfOlympus')}
+            {tCta('playNow')}
           </CtaButton>
         </nav>
       </div>
