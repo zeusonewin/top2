@@ -48,7 +48,15 @@ const config: Config = {
       },
       boxShadow: {
         'cta-glow': '0 0 24px rgba(251, 191, 36, 0.35)',
+        'cta-glow-lg': '0 0 40px rgba(251, 191, 36, 0.25)',
         'card': '0 4px 24px rgba(0, 0, 0, 0.25)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.2)',
+        'glass-gold': '0 0 0 1px rgba(251, 191, 36, 0.15), 0 8px 32px rgba(0, 0, 0, 0.25)',
+      },
+      backdropBlur: {
+        xs: '2px',
+        'glass': '12px',
+        'glass-lg': '20px',
       },
     },
   },

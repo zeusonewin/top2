@@ -9,14 +9,20 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
+const iconUrl = SITE_FAVICON_OG_IMAGE;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: { default: SITE_CONFIG.name, template: `%s | ${SITE_CONFIG.name}` },
   description: SITE_CONFIG.description,
   openGraph: { siteName: SITE_CONFIG.name },
   icons: {
-    icon: SITE_FAVICON_OG_IMAGE,
-    apple: SITE_FAVICON_OG_IMAGE,
+    icon: [
+      { url: iconUrl, type: 'image/png', sizes: '32x32' },
+      { url: iconUrl, type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [{ url: iconUrl, sizes: '180x180', type: 'image/png' }],
+    shortcut: iconUrl,
   },
 };
 

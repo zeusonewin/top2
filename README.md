@@ -59,9 +59,10 @@ npm start
 
 **Домен по умолчанию:** https://olympus-slot.org (canonical, sitemap, OG, robots). План на 90 дней, линкбилдинг (Reddit, форумы, guest posts, niche edits, крауд-маркетинг), freshness — **SEO_GROWTH_PLAN.md**. Дополнительно: **SEO_STRATEGY.md**.
 
-## Изображения
+## Изображения и иконка сайта
 
-- **Фавикон и OG:** положите файл `olympus.png` в папку `public/`. Он используется как иконка сайта (favicon, Apple touch icon) и как изображение по умолчанию для Open Graph и Twitter Cards на всех страницах.
+- **Чтобы иконка (favicon) отображалась:** поместите файл **`olympus.png`** в папку **`public/`** в корне проекта. Итоговый путь: **`public/olympus.png`**. Тогда иконка будет доступна по адресу `/olympus.png` и подставится в favicon и Apple touch icon. Запросы к `/favicon.ico` перенаправляются на `/olympus.png`.
+- Тот же файл используется для Open Graph и Twitter Cards на всех страницах.
 
 ## Переменные окружения
 

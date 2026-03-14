@@ -132,30 +132,30 @@ export default async function HomePage() {
 
         <div className="grid gap-12 lg:grid-cols-[1fr_240px] lg:gap-16">
           <div>
-            {/* Quick Overview — 120–150 words, H2, contextual links for SEO */}
+            {/* Quick Overview — стекло + премиум типографика */}
             <section id="quick-overview" className="scroll-mt-24">
-              <div className="rounded-2xl border border-surface-border bg-surface-elevated p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-white mb-4 md:text-3xl">
+              <div className="rounded-2xl border border-white/10 backdrop-blur-[12px] bg-white/[0.07] p-6 md:p-8 shadow-glass">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent mb-4 md:text-3xl">
                   {tHome('quickOverviewTitle')}
                 </h2>
-                <p className="text-surface-muted leading-relaxed text-base md:text-lg">
+                <p className="text-white/80 leading-relaxed text-base md:text-lg">
                   {tHome('quickOverview')}
                 </p>
-                <p className="mt-4 text-surface-muted text-sm md:text-base">
+                <p className="mt-4 text-white/70 text-sm md:text-base">
                   {isRu ? 'Подробнее: ' : 'More: '}
-                  <Link href={pillarHref} className="text-cta hover:text-cta-hover font-medium transition-colors" prefetch>{isRu ? 'полный гайд' : 'full guide'}</Link>
+                  <Link href={pillarHref} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{isRu ? 'полный гайд' : 'full guide'}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/rtp`} className="text-cta hover:text-cta-hover font-medium transition-colors" prefetch>{tNav('rtp')}</Link>
+                  <Link href={`${pillarHref}/rtp`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('rtp')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/strategy`} className="text-cta hover:text-cta-hover font-medium transition-colors" prefetch>{tNav('strategy')}</Link>
+                  <Link href={`${pillarHref}/strategy`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('strategy')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/multipliers`} className="text-cta hover:text-cta-hover font-medium transition-colors" prefetch>{tNav('multipliers')}</Link>
+                  <Link href={`${pillarHref}/multipliers`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('multipliers')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/demo`} className="text-cta hover:text-cta-hover font-medium transition-colors" prefetch>{tNav('demo')}</Link>
+                  <Link href={`${pillarHref}/demo`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('demo')}</Link>
                 </p>
                 <Link
                   href={pillarHref}
-                  className="mt-5 inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold transition-colors"
+                  className="mt-5 inline-flex items-center gap-2 text-cta hover:text-amber-200 font-bold transition-all hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]"
                   prefetch
                 >
                   {tHome('readGuide')}

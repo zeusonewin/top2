@@ -8,11 +8,11 @@ export async function Header() {
   const locale = await getLocale();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-surface-border bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/90">
+    <header className="sticky top-0 z-40 border-b border-white/10 backdrop-blur-[20px] bg-surface/80 supports-[backdrop-filter]:bg-surface/70">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
         <Link
           href={`/${locale}`}
-          className="text-xl font-bold text-white hover:text-cta transition-colors"
+          className="text-xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent hover:from-cta hover:to-amber-200 transition-all duration-300"
           prefetch
         >
           Olympus Slot

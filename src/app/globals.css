@@ -42,12 +42,28 @@ body {
 
 /* Table of Contents */
 .toc-link {
-  @apply text-surface-muted hover:text-cta transition-colors text-sm py-1 block border-l-2 border-transparent hover:border-cta pl-3;
+  @apply text-white/70 hover:text-cta transition-all text-sm py-1 block border-l-2 border-transparent hover:border-cta hover:drop-shadow-[0_0_6px_rgba(251,191,36,0.25)] pl-3;
 }
 
 /* Callout blocks */
 .callout {
   @apply rounded-xl border border-surface-border bg-surface-elevated/80 p-5;
+}
+
+/* Glass (iPhone-style) */
+.glass {
+  @apply backdrop-blur-glass border border-white/10 bg-white/5;
+}
+.glass-card {
+  @apply backdrop-blur-glass-lg border border-white/10 bg-white/[0.07] shadow-glass;
+}
+.glass-card:hover {
+  @apply border-cta/20 bg-white/[0.1];
+}
+
+/* Premium gradient text for titles */
+.gradient-text {
+  @apply bg-gradient-to-r from-cta via-amber-200 to-cta bg-clip-text text-transparent;
 }
 
 /* Safe area for sticky CTA */

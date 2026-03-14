@@ -34,10 +34,11 @@ export async function HomeHero({
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cta/30 to-transparent" />
 
       <div className="relative mx-auto w-full max-w-5xl px-4 pt-20 pb-24 md:pt-28 md:pb-32 flex flex-col items-center text-center">
-        <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl">
+        {/* Кликабельный заголовок: градиент + лёгкое свечение */}
+        <h1 className="animate-fade-in-up text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl bg-gradient-to-r from-cta via-amber-200 to-cta bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(251,191,36,0.3)]">
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-surface-muted md:text-xl lg:text-2xl leading-relaxed mx-auto">
+        <p className="mt-6 max-w-2xl text-lg text-white/80 md:text-xl lg:text-2xl leading-relaxed mx-auto font-medium">
           {subtitle}
         </p>
 
@@ -57,7 +58,7 @@ export async function HomeHero({
         <p className="mt-10">
           <Link
             href={guideHref}
-            className="inline-flex items-center gap-2 text-cta hover:text-cta-hover font-medium transition-colors text-base"
+            className="inline-flex items-center gap-2 text-cta hover:text-amber-200 font-semibold transition-all text-base hover:drop-shadow-[0_0_12px_rgba(251,191,36,0.5)]"
             prefetch
           >
             {guideLabel}
