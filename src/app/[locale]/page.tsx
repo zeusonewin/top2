@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import { getTranslations, getLocale } from 'next-intl/server';
-import { buildMetadata } from '@/lib/seo';
-import { Hero } from '@/components/ui/Hero';
+import { buildMetadata, buildJsonLdWebPage, buildJsonLdOrganization, buildJsonLdFAQ } from '@/lib/seo';
+import { HomeHero } from '@/components/home/HomeHero';
+import { SectionCard } from '@/components/home/SectionCard';
+import { HomeToC } from '@/components/home/HomeToC';
 import { CtaButton } from '@/components/cta/CtaButton';
 import { TrustBlock } from '@/components/conversion/TrustBlock';
+import { RtpTable } from '@/components/content/RtpTable';
+import { FaqBlock } from '@/components/conversion/FaqBlock';
+import { SITE_CONFIG } from '@/config/site';
+import { getRtpTableRows, RTP_TABLE_CAPTION_RU, RTP_TABLE_CAPTION_EN } from '@/data/rtp-table';
+import { getHomeFaq } from '@/data/home-faq';
 
 export async function generateMetadata() {
   const locale = (await getLocale()) as 'ru' | 'en';
@@ -17,9 +24,13 @@ export async function generateMetadata() {
 }
 
 export default async function HomePage() {
-  const t = await getTranslations('cta');
   const locale = await getLocale();
   const isRu = locale === 'ru';
+  const t = await getTranslations('cta');
+  const tHome = await getTranslations('home');
+  const tNav = await getTranslations('nav');
+  const base = `/${locale}`;
+  const pillarHref = `${base}/gates-of-olympus`;
 
   const title = isRu
     ? 'Gates of Olympus — экспертный гайд 2026'
@@ -28,43 +39,167 @@ export default async function HomePage() {
     ? 'RTP 96.5%, множители до 500x, стратегия и бонусный раунд. Всё о слоте Pragmatic Play в одном месте.'
     : 'RTP 96.5%, multipliers up to 500x, strategy and bonus round. Everything about the Pragmatic Play slot in one place.';
 
+  const canonical = `${SITE_CONFIG.url}/${locale}`;
+  const webPageJsonLd = buildJsonLdWebPage({
+    name: title,
+    description: subtitle,
+    url: canonical,
+  });
+  const orgJsonLd = buildJsonLdOrganization();
+  const homeFaq = getHomeFaq(locale as 'ru' | 'en');
+  const faqJsonLd = buildJsonLdFAQ(homeFaq);
+
+  const sectionCards = [
+    {
+      id: 'rtp',
+      title: tHome('sections.rtp'),
+      description: isRu
+        ? 'RTP 96.5%, волатильность и как это влияет на выплаты. Полный разбор математики слота.'
+        : 'RTP 96.5%, volatility and how it affects payouts. Full slot math breakdown.',
+      href: `${pillarHref}/rtp`,
+    },
+    {
+      id: 'strategy',
+      title: tHome('sections.strategy'),
+      description: isRu
+        ? 'Управление банкроллом, выбор ставок и тактика игры. Проверенные советы от экспертов.'
+        : 'Bankroll management, bet sizing and gameplay tactics. Proven expert tips.',
+      href: `${pillarHref}/strategy`,
+    },
+    {
+      id: 'multipliers',
+      title: tHome('sections.multipliers'),
+      description: isRu
+        ? 'Множители до 500x: механика тумблов, каскады и накопление в бонусном раунде.'
+        : 'Multipliers up to 500x: tumble mechanics, cascades and accumulation in the bonus.',
+      href: `${pillarHref}/multipliers`,
+    },
+    {
+      id: 'demo',
+      title: tHome('sections.demo'),
+      description: isRu
+        ? 'Демо-режим без регистрации. Практика и тестирование стратегий перед игрой на деньги.'
+        : 'Demo mode without registration. Practice and test strategies before playing for real.',
+      href: `${pillarHref}/demo`,
+    },
+    {
+      id: 'faq',
+      title: tHome('sections.faq'),
+      description: isRu
+        ? 'Ответы на частые вопросы: RTP, бонус, множители, демо и правила игры.'
+        : 'Answers to common questions: RTP, bonus, multipliers, demo and game rules.',
+      href: '#faq',
+    },
+    {
+      id: 'bankroll',
+      title: tHome('sections.bankroll'),
+      description: isRu
+        ? 'Как рассчитать банкролл, сколько ставить на спин и как не слить депозит.'
+        : 'How to size your bankroll, bet per spin and avoid blowing your deposit.',
+      href: `${pillarHref}/strategy`,
+    },
+  ];
+
   return (
     <>
-      <Hero
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      <HomeHero
         title={title}
         subtitle={subtitle}
-        ctaSlot={
-          <>
-            <CtaButton variant="primary" microcopy={t('microcopy')} subid="hero">
-              {t('playNow')}
-            </CtaButton>
-            <TrustBlock />
-          </>
+        primaryCta={
+          <CtaButton variant="primary" microcopy={t('microcopy')} subid="hero_primary">
+            {t('playNow')}
+          </CtaButton>
         }
-        guideHref={`/${locale}/gates-of-olympus`}
-        guideLabel={isRu ? 'Читать полный гайд' : 'Read full guide'}
+        secondaryCta={
+          <CtaButton variant="secondary" subid="hero_secondary">
+            {t('tryDemo')}
+          </CtaButton>
+        }
+        trustSlot={<TrustBlock />}
+        guideHref={pillarHref}
+        guideLabel={tHome('readGuide')}
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16">
-        <div className="rounded-xl border border-surface-border bg-surface-elevated/80 p-6 md:p-8">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            {isRu ? 'Что такое Gates of Olympus?' : 'What is Gates of Olympus?'}
-          </h2>
-          <p className="text-surface-muted leading-relaxed mb-4">
-            {isRu
-              ? 'Gates of Olympus — один из самых популярных слотов Pragmatic Play: 6 барабанов, кластерные выплаты, множители до 500x и бонусный раунд бесплатных спинов. RTP 96.5%, высокая волатильность. На этом сайте — проверенная стратегия, разбор RTP и советы по игре.'
-              : 'Gates of Olympus is one of Pragmatic Play’s most popular slots: 6 reels, cluster pays, multipliers up to 500x and a free spins bonus round. RTP 96.5%, high volatility. This site covers proven strategy, RTP breakdown and gameplay tips.'}
-          </p>
-          <Link
-            href={`/${locale}/gates-of-olympus`}
-            className="inline-flex items-center gap-1 text-cta hover:text-cta-hover font-medium transition-colors"
-            prefetch
-          >
-            {isRu ? 'Полный гайд Gates of Olympus' : 'Full Gates of Olympus guide'}
-            <span aria-hidden>→</span>
-          </Link>
+      <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+        {/* Mobile ToC */}
+        <div className="mb-10 lg:hidden">
+          <HomeToC />
         </div>
-      </section>
+
+        <div className="grid gap-12 lg:grid-cols-[1fr_240px] lg:gap-16">
+          <div>
+            {/* Quick Overview */}
+            <section id="quick-overview" className="scroll-mt-24">
+              <div className="rounded-2xl border border-surface-border bg-surface-elevated/80 p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-white mb-4 md:text-3xl">
+                  {tHome('quickOverviewTitle')}
+                </h2>
+                <p className="text-surface-muted leading-relaxed text-base md:text-lg">
+                  {tHome('quickOverview')}
+                </p>
+                <Link
+                  href={pillarHref}
+                  className="mt-5 inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold transition-colors"
+                  prefetch
+                >
+                  {tHome('readGuide')}
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </section>
+
+            {/* Section cards grid */}
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-8">
+              {sectionCards.map((card) => (
+                <SectionCard
+                  key={card.id}
+                  id={card.id}
+                  title={card.title}
+                  description={card.description}
+                  href={card.href}
+                  linkLabel={tHome('readGuide')}
+                />
+              ))}
+            </div>
+
+            {/* Parameters table */}
+            <section id="params" className="mt-14 scroll-mt-24">
+              <h2 className="text-2xl font-bold text-white mb-6 md:text-3xl">
+                {tHome('paramsTitle')}
+              </h2>
+              <RtpTable
+                rows={getRtpTableRows(locale as 'ru' | 'en')}
+                caption={isRu ? RTP_TABLE_CAPTION_RU : RTP_TABLE_CAPTION_EN}
+              />
+              <Link
+                href={`${pillarHref}/rtp`}
+                className="mt-4 inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold text-sm"
+                prefetch
+              >
+                {tNav('rtp')} →
+              </Link>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mt-14 scroll-mt-24">
+              <FaqBlock
+                items={homeFaq.map((f) => ({ question: f.question, answer: f.answer }))}
+                id="faq"
+              />
+            </section>
+          </div>
+
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              <HomeToC />
+            </div>
+          </aside>
+        </div>
+      </div>
     </>
   );
 }

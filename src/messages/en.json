@@ -61,8 +61,26 @@
     "playForReal": "Play for Real",
     "startPlaying": "Start Playing",
     "tryNow": "Try Now",
+    "tryDemo": "Try Demo",
+    "getAccess": "Get Access",
     "register": "Register",
     "microcopy": "Partner registration. 18+"
+  },
+  "home": {
+    "quickOverviewTitle": "Quick overview",
+    "quickOverview": "Gates of Olympus is a Pragmatic Play hit with cluster pays and multipliers up to 500x. RTP 96.5%, high volatility, bonus of 15 free spins from 4 scatters. Ideal for players who like big but less frequent wins.",
+    "sections": {
+      "rtp": "RTP & payouts",
+      "strategy": "Strategy",
+      "multipliers": "Multipliers",
+      "demo": "Demo",
+      "faq": "FAQ",
+      "bankroll": "Bankroll"
+    },
+    "paramsTitle": "Key parameters",
+    "faqTitle": "Frequently asked",
+    "readGuide": "Read guide",
+    "tocTitle": "On this page"
   },
   "footer": {
     "disclaimer": "Disclaimer",
