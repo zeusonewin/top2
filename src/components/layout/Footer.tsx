@@ -6,10 +6,11 @@ export async function Footer() {
   const locale = await getLocale();
   const base = `/${locale}`;
   const isRu = locale === 'ru';
+  const pillar = `${base}/gates-of-olympus`;
 
   return (
-    <footer className="mt-auto border-t border-white/[0.08] bg-[#0B0B0F]">
-      <div className="container mx-auto max-w-6xl px-4 py-16">
+    <footer className="mt-auto border-t border-slate-800 bg-[#020617]">
+      <div className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
@@ -30,22 +31,22 @@ export async function Footer() {
             </p>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href={`${base}/gates-of-olympus`} className="text-slate-400 hover:text-white transition-colors" prefetch>
+                <Link href={pillar} className="text-slate-400 hover:text-white transition-colors" prefetch>
                   Gates of Olympus
                 </Link>
               </li>
               <li>
-                <Link href={`${base}/gates-of-olympus/strategy`} className="text-slate-400 hover:text-white transition-colors" prefetch>
+                <Link href={`${pillar}/strategy`} className="text-slate-400 hover:text-white transition-colors" prefetch>
                   {isRu ? 'Стратегия' : 'Strategy'}
                 </Link>
               </li>
               <li>
-                <Link href={`${base}/gates-of-olympus/rtp`} className="text-slate-400 hover:text-white transition-colors" prefetch>
+                <Link href={`${pillar}/rtp`} className="text-slate-400 hover:text-white transition-colors" prefetch>
                   RTP
                 </Link>
               </li>
               <li>
-                <Link href={`${base}/gates-of-olympus/demo`} className="text-slate-400 hover:text-white transition-colors" prefetch>
+                <Link href={`${pillar}/demo`} className="text-slate-400 hover:text-white transition-colors" prefetch>
                   {isRu ? 'Демо' : 'Demo'}
                 </Link>
               </li>
@@ -71,7 +72,7 @@ export async function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-white/[0.08] text-center text-xs text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
           {t('copyright')}
         </div>
       </div>

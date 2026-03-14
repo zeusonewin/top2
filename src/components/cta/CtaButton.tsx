@@ -23,7 +23,6 @@ interface CtaButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'sticky';
   className?: string;
-  /** Not displayed in UI — removed for conversion. Kept for API compatibility. */
   microcopy?: string;
   subid?: string;
 }
@@ -47,14 +46,14 @@ export function CtaButton({
   };
 
   const base =
-    'inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-[#0B0B0F]';
+    'inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-[#0f172a]';
   const variants = {
     primary:
-      'bg-gradient-to-r from-violet-500 to-purple-600 text-white px-7 py-4 text-lg shadow-glow hover:shadow-glow-lg hover:scale-[1.03] active:scale-[0.98] border border-white/10',
+      'bg-amber-500 text-slate-900 hover:bg-amber-600',
     secondary:
-      'backdrop-blur-xl bg-white/[0.04] text-white border border-white/[0.08] hover:bg-white/[0.08] hover:border-violet-500/30 hover:shadow-glow px-7 py-4 text-lg',
+      'border border-slate-500 bg-slate-800/50 text-white hover:border-slate-400 hover:bg-slate-700/50',
     sticky:
-      'fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-violet-500 to-purple-600 text-white py-4 text-lg font-bold shadow-[0_-4px_24px_rgba(0,0,0,0.4)] md:hidden pb-safe border-t border-white/10',
+      'fixed bottom-0 left-0 right-0 z-50 bg-amber-500 text-slate-900 py-4 text-lg font-semibold md:hidden pb-safe',
   };
 
   return (
