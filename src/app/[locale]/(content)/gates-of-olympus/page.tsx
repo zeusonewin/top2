@@ -1,18 +1,24 @@
 import Link from 'next/link';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { buildMetadata, buildJsonLdWebPage, buildJsonLdBreadcrumb, buildJsonLdOrganization, buildJsonLdFAQ } from '@/lib/seo';
-import { Hero } from '@/components/ui/Hero';
-import { CtaButton } from '@/components/cta/CtaButton';
+import { HomeHero } from '@/components/home/HomeHero';
+import { ShortDescription } from '@/components/home/ShortDescription';
+import { QuickStats } from '@/components/home/QuickStats';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { RelatedPosts } from '@/components/seo/RelatedPosts';
-import { TrustBlock } from '@/components/conversion/TrustBlock';
 import { FaqBlock } from '@/components/conversion/FaqBlock';
 import { getRelatedArticles } from '@/config/content';
 import { SITE_CONFIG } from '@/config/site';
-import { ExpertiseBlock } from '@/components/content/ExpertiseBlock';
 
 const SLOT_ID = 'gates-of-olympus';
 const PAGE_PATH = 'gates-of-olympus';
+
+const GUIDE_LINKS = [
+  { slug: 'strategy', key: 'strategy' as const },
+  { slug: 'rtp', key: 'rtp' as const },
+  { slug: 'multipliers', key: 'multipliers' as const },
+  { slug: 'demo', key: 'demo' as const },
+];
 
 export async function generateMetadata() {
   const locale = (await getLocale()) as 'ru' | 'en';
@@ -26,10 +32,10 @@ export async function generateMetadata() {
 }
 
 export default async function GatesOfOlympusPillarPage() {
-  const locale = await getLocale();
+  const locale = (await getLocale()) as 'ru' | 'en';
   const t = await getTranslations('pillar');
+  const tHome = await getTranslations('home');
   const tNav = await getTranslations('nav');
-  const tCommon = await getTranslations('common');
   const tCta = await getTranslations('cta');
   const base = `/${locale}`;
   const related = getRelatedArticles(SLOT_ID, 'index');
@@ -66,17 +72,6 @@ export default async function GatesOfOlympusPillarPage() {
   ];
   const faqJsonLd = buildJsonLdFAQ(faqItems.map((f) => ({ question: f.question, answer: typeof f.answer === 'string' ? f.answer : '' })));
 
-  const articleLinks = [
-    { slug: 'strategy', key: 'strategy' },
-    { slug: 'rtp', key: 'rtp' },
-    { slug: 'multipliers', key: 'multipliers' },
-    { slug: 'bonus-round', key: 'bonusRound' },
-    { slug: 'how-to-win', key: 'howToWin' },
-    { slug: 'mistakes', key: 'mistakes' },
-    { slug: 'demo', key: 'demo' },
-    { slug: 'tips', key: 'tips' },
-  ];
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
@@ -84,68 +79,42 @@ export default async function GatesOfOlympusPillarPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <Hero
-        title={`Gates of Olympus — ${isRu ? 'полный гайд' : 'complete guide'} 2026`}
-        subtitle={t('description')}
-        ctaSlot={
-          <>
-            <CtaButton variant="primary" subid="pillar">
-              {tCta('play')}
-            </CtaButton>
-            <TrustBlock />
-          </>
-        }
+      <HomeHero
+        title={t('heroTitle')}
+        subtitle={t('heroSubtitle')}
+        primaryCtaLabel={tCta('playForReal')}
+        secondaryCtaLabel={tCta('openCasino')}
       />
 
-      <article className="mx-auto max-w-5xl px-4 py-12">
+      <div className="mx-auto max-w-6xl px-6 py-12">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <p className="text-surface-muted text-sm mb-8">
-          {tCommon('lastUpdated')}: {dateModified}
-        </p>
+        <ShortDescription />
 
-        <div className="prose-dark prose max-w-none">
-          <p className="text-lg text-surface-muted">
-            Gates of Olympus — один из самых популярных слотов Pragmatic Play с механикой кластерных выплат и множителями до 500x. В этом гайде: RTP 96.5%, стратегия, бонусный раунд и советы по игре.
-          </p>
+        <QuickStats />
 
-          <h2 className="text-white">{isRu ? 'Обзор' : 'Overview'}</h2>
-          <p className="text-surface-muted">
-            Слот Gates of Olympus (Врата Олимпа) — 6 барабанов, кластерные выплаты, каскады (tumble), множители до 500x. В бонусном раунде бесплатных спинов множители суммируются. RTP 96.5%, волатильность высокая.
-          </p>
+        <section className="py-20" aria-label="Guides">
+          <h2 className="text-2xl font-bold text-[#f4f4f5] mb-8">
+            {tHome('guidesTitle')}
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {GUIDE_LINKS.map(({ slug, key }) => (
+              <Link
+                key={slug}
+                href={`${base}/${PAGE_PATH}/${slug}`}
+                className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-[#f4f4f5] hover:border-zinc-700 transition-colors block"
+                prefetch
+              >
+                <span className="font-semibold">{tNav(key)}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-          <h2 className="text-white">{isRu ? 'Ключевые особенности' : 'Key features'}</h2>
-          <ul className="text-surface-muted">
-            <li>RTP 96.5%</li>
-            <li>Множители до 500x</li>
-            <li>Бесплатные спины с накопительными множителями</li>
-            <li>Демо-режим для практики</li>
-          </ul>
-        </div>
+        <FaqBlock items={faqItems.map((f) => ({ question: f.question, answer: f.answer }))} id="faq" />
 
-        <h2 className="mt-14 text-2xl font-bold text-white">
-          {isRu ? 'Все материалы' : 'All articles'}
-        </h2>
-        <p className="mt-1 text-surface-muted text-sm mb-6">
-          {isRu ? 'Подробные гайды по стратегии, RTP, множителям, бонусу и советам.' : 'In-depth guides on strategy, RTP, multipliers, bonus and tips.'}
-        </p>
-        <nav className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Related articles">
-          {articleLinks.map(({ slug, key }) => (
-            <Link
-              key={slug}
-              href={`${base}/${PAGE_PATH}/${slug}`}
-              className="block p-5 rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] hover:border-violet-500/20 hover:shadow-glow transition-all duration-300"
-              prefetch
-            >
-              <span className="font-medium text-white group-hover:text-violet-400">{tNav(key)}</span>
-            </Link>
-          ))}
-        </nav>
-
-        <ExpertiseBlock />
-        <FaqBlock items={faqItems} />
         <RelatedPosts slotId={PAGE_PATH} posts={related} />
-      </article>
+      </div>
     </>
   );
 }

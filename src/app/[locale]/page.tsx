@@ -1,7 +1,7 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { buildMetadata, buildJsonLdWebPage, buildJsonLdOrganization, buildJsonLdFAQ } from '@/lib/seo';
 import { HomeHero } from '@/components/home/HomeHero';
-import { SlotPreviewBlock } from '@/components/home/SlotPreviewBlock';
+import { ShortDescription } from '@/components/home/ShortDescription';
 import { QuickStats } from '@/components/home/QuickStats';
 import { GuidesSection } from '@/components/home/GuidesSection';
 import { FaqAccordion } from '@/components/home/FaqAccordion';
@@ -22,7 +22,7 @@ export async function generateMetadata() {
 
 export default async function HomePage() {
   const locale = (await getLocale()) as 'ru' | 'en';
-  const t = await getTranslations('cta');
+  const tCta = await getTranslations('cta');
   const tHome = await getTranslations('home');
   const base = `/${locale}`;
   const pillarHref = `${base}/gates-of-olympus`;
@@ -46,11 +46,11 @@ export default async function HomePage() {
       <HomeHero
         title={tHome('heroTitle')}
         subtitle={tHome('heroSubtitle')}
-        primaryCtaLabel={t('playNow')}
-        secondaryCtaLabel={t('tryDemo')}
+        primaryCtaLabel={tCta('playForReal')}
+        secondaryCtaLabel={tCta('openCasino')}
       />
 
-      <SlotPreviewBlock />
+      <ShortDescription />
 
       <QuickStats />
 

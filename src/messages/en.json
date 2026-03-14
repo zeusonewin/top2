@@ -19,7 +19,9 @@
   },
   "pillar": {
     "title": "Gates of Olympus — Complete Guide 2026: RTP, Strategy, Bonuses",
-    "description": "In-depth Gates of Olympus slot review by Pragmatic Play: 96.5% RTP, multipliers up to 500x, bonus round. Strategy and gameplay tips."
+    "description": "In-depth Gates of Olympus slot review by Pragmatic Play: 96.5% RTP, multipliers up to 500x, bonus round. Strategy and gameplay tips.",
+    "heroTitle": "Play Gates of Olympus Demo Online",
+    "heroSubtitle": "Launch the free demo version of the popular Pragmatic Play slot. Play for free or switch to real money mode."
   },
   "articles": {
     "strategy": {
@@ -58,7 +60,8 @@
   "cta": {
     "play": "Play Gates of Olympus",
     "playNow": "Play Now",
-    "playForReal": "Play for Real",
+    "playForReal": "Play for Real Money",
+    "openCasino": "Open Casino",
     "startPlaying": "Start Playing",
     "tryNow": "Try Now",
     "tryDemo": "Try Demo",
@@ -67,13 +70,14 @@
     "microcopy": "Partner registration. 18+"
   },
   "home": {
-    "heroTitle": "Gates of Olympus Slot Guide",
-    "heroSubtitle": "Learn strategy, RTP, multipliers and play demo version.",
+    "heroTitle": "Play Gates of Olympus Demo Online",
+    "heroSubtitle": "Launch the free demo version of the popular Pragmatic Play slot. Play for free or switch to real money mode.",
     "slotPreviewTitle": "Play Gates of Olympus",
-    "guidesTitle": "Guides",
+    "whatIsTitle": "What is Gates of Olympus",
+    "whatIsShortText": "Gates of Olympus is a popular Pragmatic Play slot with cascading wins and multipliers up to x500. You can play the demo version for free without registration.",
+    "guidesTitle": "Useful guides",
     "quickOverviewTitle": "Quick overview",
     "quickOverview": "Gates of Olympus is one of Pragmatic Play's most popular slots. The game uses 6 reels with cluster pays: symbols tumble in cascades, and multipliers up to 500x accumulate and apply to wins. RTP 96.5% and high volatility mean less frequent but larger payouts. The bonus round awards 15 free spins when 4 or more scatters land; in the bonus, multipliers do not reset between spins.",
-    "whatIsTitle": "What is Gates of Olympus",
     "whatIsText": "Gates of Olympus is a Pragmatic Play slot with a 6×5 grid, cluster pays and cascade mechanics. Multipliers up to 500x accumulate in both base game and free spins. High 96.5% RTP and volatility make it popular with players chasing big wins.",
     "featureTitle": "What makes the slot popular",
     "strategyTitle": "Strategy and tips",
@@ -99,7 +103,7 @@
       "rtp": "RTP",
       "maxMultiplier": "Max multiplier",
       "volatility": "Volatility",
-      "bonusFeature": "Bonus"
+      "provider": "Provider"
     },
     "features": {
       "multipliers": "Multipliers up to 500x in base and bonus. Stack between cascades.",

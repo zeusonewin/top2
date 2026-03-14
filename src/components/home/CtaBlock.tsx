@@ -16,7 +16,7 @@ export async function CtaBlock() {
         </p>
         <div className="mt-8">
           <CtaButton variant="primary" className="!px-10 !py-4 !text-xl" subid="cta_block">
-            {tCta('playNow')}
+            {tCta('playForReal')}
           </CtaButton>
         </div>
       </div>
