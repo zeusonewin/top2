@@ -13,7 +13,7 @@ export function LanguageSwitcher() {
   return (
     <Link
       href={href}
-      className="text-sm font-medium text-slate-400 hover:text-white uppercase transition-colors"
+      className="text-sm font-medium text-[#a1a1aa] hover:text-[#f4f4f5] uppercase transition-colors"
       prefetch
     >
       {otherLocale === 'ru' ? 'RU' : 'EN'}

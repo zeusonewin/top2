@@ -4,11 +4,11 @@
 
 :root {
   --font-sans: system-ui, -apple-system, sans-serif;
-  --bg: #0f172a;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --accent: #f59e0b;
+  --bg: #0e0e11;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+  --accent: #22c55e;
 }
 
 html {
@@ -24,23 +24,23 @@ body {
 
 /* Prose in articles */
 .prose-dark {
-  --tw-prose-body: #cbd5e1;
-  --tw-prose-headings: #f1f5f9;
-  --tw-prose-links: #f59e0b;
-  --tw-prose-bold: #f1f5f9;
+  --tw-prose-body: #a1a1aa;
+  --tw-prose-headings: #f4f4f5;
+  --tw-prose-links: #22c55e;
+  --tw-prose-bold: #f4f4f5;
 }
 
 .prose-dark h2 {
-  @apply border-b border-slate-600 pb-2 mt-10 mb-4;
+  @apply border-b border-zinc-800 pb-2 mt-10 mb-4;
 }
 
 .prose-dark a {
-  @apply text-amber-500 hover:text-amber-400 transition-colors;
+  @apply text-emerald-500 hover:text-emerald-400 transition-colors;
 }
 
 /* Table of Contents */
 .toc-link {
-  @apply text-slate-400 hover:text-white transition-all duration-300 text-sm py-1 block border-l-2 border-transparent hover:border-amber-500 pl-3;
+  @apply text-zinc-400 hover:text-zinc-50 transition-all duration-300 text-sm py-1 block border-l-2 border-transparent hover:border-emerald-500 pl-3;
 }
 
 /* Callout blocks */

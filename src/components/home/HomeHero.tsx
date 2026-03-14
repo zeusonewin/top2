@@ -14,12 +14,12 @@ export function HomeHero({
   secondaryCtaLabel,
 }: HomeHeroProps) {
   return (
-    <section className="border-b border-slate-700/50 bg-[#0f172a]" aria-label="Hero">
-      <div className="mx-auto max-w-4xl px-4 py-20 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+    <section className="py-20" aria-label="Hero">
+      <div className="mx-auto max-w-6xl px-6 text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-[#f4f4f5] md:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 text-lg text-slate-300">
+        <p className="mt-4 text-lg text-[#a1a1aa]">
           {subtitle}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

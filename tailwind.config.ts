@@ -11,8 +11,8 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#0f172a',
-          elevated: '#1e293b',
+          DEFAULT: '#0e0e11',
+          elevated: '#18181b',
           card: 'rgba(255,255,255,0.04)',
           border: 'rgba(255,255,255,0.08)',
           muted: '#9CA3AF',

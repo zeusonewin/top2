@@ -46,14 +46,14 @@ export function CtaButton({
   };
 
   const base =
-    'inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-[#0f172a]';
+    'inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-[#0e0e11]';
   const variants = {
     primary:
-      'bg-amber-500 text-slate-900 hover:bg-amber-600',
+      'bg-[#22c55e] text-white hover:bg-[#16a34a]',
     secondary:
-      'border border-slate-500 bg-slate-800/50 text-white hover:border-slate-400 hover:bg-slate-700/50',
+      'border border-zinc-600 bg-zinc-800/50 text-[#f4f4f5] hover:border-zinc-500 hover:bg-zinc-700/50',
     sticky:
-      'fixed bottom-0 left-0 right-0 z-50 bg-amber-500 text-slate-900 py-4 text-lg font-semibold md:hidden pb-safe',
+      'fixed bottom-0 left-0 right-0 z-50 bg-[#22c55e] text-white py-4 text-lg font-semibold md:hidden pb-safe',
   };
 
   return (

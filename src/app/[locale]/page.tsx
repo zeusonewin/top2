@@ -4,7 +4,6 @@ import { HomeHero } from '@/components/home/HomeHero';
 import { SlotPreviewBlock } from '@/components/home/SlotPreviewBlock';
 import { QuickStats } from '@/components/home/QuickStats';
 import { GuidesSection } from '@/components/home/GuidesSection';
-import { DemoSection } from '@/components/home/DemoSection';
 import { FaqAccordion } from '@/components/home/FaqAccordion';
 import { CtaBlock } from '@/components/home/CtaBlock';
 import { SITE_CONFIG } from '@/config/site';
@@ -56,8 +55,6 @@ export default async function HomePage() {
       <QuickStats />
 
       <GuidesSection pillarHref={pillarHref} />
-
-      <DemoSection />
 
       <FaqAccordion items={homeFaq} title={tHome('faqTitle')} />
 

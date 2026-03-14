@@ -5,7 +5,6 @@ const GUIDES = [
   { slug: 'strategy', key: 'strategy' as const },
   { slug: 'rtp', key: 'rtp' as const },
   { slug: 'multipliers', key: 'multipliers' as const },
-  { slug: 'bonus-round', key: 'bonusRound' as const },
   { slug: 'demo', key: 'demo' as const },
 ];
 
@@ -18,17 +17,17 @@ export async function GuidesSection({ pillarHref }: GuidesSectionProps) {
   const tNav = await getTranslations('nav');
 
   return (
-    <section className="py-20 border-t border-slate-700/50" aria-label="Guides">
-      <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-2xl font-bold text-white mb-8">
+    <section className="py-20" aria-label="Guides">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-2xl font-bold text-[#f4f4f5] mb-8">
           {t('guidesTitle')}
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {GUIDES.map(({ slug, key }) => (
             <Link
               key={slug}
               href={`${pillarHref}/${slug}`}
-              className="rounded-xl border border-slate-600 bg-slate-800/40 p-6 text-white hover:border-amber-500/50 hover:bg-slate-800/60 transition-colors block"
+              className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-[#f4f4f5] hover:border-zinc-700 transition-colors block"
               prefetch
             >
               <span className="font-semibold">{tNav(key)}</span>
