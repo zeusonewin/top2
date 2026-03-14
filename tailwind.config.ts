@@ -11,21 +11,19 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#0f172a',
-          elevated: '#1e293b',
-          card: '#1e293b',
-          border: '#334155',
-          muted: '#64748b',
-        },
-        cta: {
-          DEFAULT: '#fbbf24',
-          hover: '#f59e0b',
-          dark: '#d97706',
-          glow: 'rgba(251, 191, 36, 0.25)',
+          DEFAULT: '#0B0B0F',
+          elevated: '#12121a',
+          card: 'rgba(255,255,255,0.04)',
+          border: 'rgba(255,255,255,0.08)',
+          muted: '#9CA3AF',
         },
         accent: {
-          gold: '#fbbf24',
-          amber: '#f59e0b',
+          violet: '#A855F7',
+          purple: '#9333EA',
+        },
+        cta: {
+          DEFAULT: '#A855F7',
+          hover: '#a78bfa',
         },
       },
       fontFamily: {
@@ -47,16 +45,16 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'cta-glow': '0 0 24px rgba(251, 191, 36, 0.35)',
-        'cta-glow-lg': '0 0 40px rgba(251, 191, 36, 0.25)',
-        'card': '0 4px 24px rgba(0, 0, 0, 0.25)',
+        'glow': '0 0 40px rgba(168, 85, 247, 0.2)',
+        'glow-lg': '0 0 60px rgba(168, 85, 247, 0.25)',
+        'card': '0 4px 24px rgba(0, 0, 0, 0.3)',
         'glass': '0 8px 32px rgba(0, 0, 0, 0.2)',
-        'glass-gold': '0 0 0 1px rgba(251, 191, 36, 0.15), 0 8px 32px rgba(0, 0, 0, 0.25)',
+        'glass-glow': '0 0 0 1px rgba(255,255,255,0.08), 0 0 24px rgba(168, 85, 247, 0.1)',
       },
       backdropBlur: {
         xs: '2px',
         'glass': '12px',
-        'glass-lg': '20px',
+        'xl': '24px',
       },
     },
   },

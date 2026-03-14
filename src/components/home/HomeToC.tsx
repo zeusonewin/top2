@@ -21,10 +21,10 @@ export async function HomeToC() {
 
   return (
     <nav
-      className="rounded-2xl border border-white/10 backdrop-blur-[12px] bg-white/[0.07] p-5 shadow-glass"
+      className="rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] p-5"
       aria-label={t('tocTitle')}
     >
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-3">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
         {t('tocTitle')}
       </h2>
       <ul className="space-y-1">

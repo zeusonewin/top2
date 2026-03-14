@@ -135,17 +135,13 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <header className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h1>
-          <p className="text-surface-muted text-sm">
+          <p className="text-slate-400 text-sm">
             {tCommon('lastUpdated')}: {dateModified}
           </p>
         </header>
 
         <div className="mb-8">
-          <CtaButton
-            variant="primary"
-            microcopy={locale === 'ru' ? 'Регистрация у партнёра. 18+' : 'Partner registration. 18+'}
-            subid="article"
-          >
+          <CtaButton variant="primary" subid="article">
             {locale === 'ru' ? 'Играть в Gates of Olympus' : 'Play Gates of Olympus'}
           </CtaButton>
           <TrustBlock />
@@ -160,7 +156,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
 
             <div id="detail" className="prose-dark prose max-w-none">
-              <p className="lead text-lg text-surface-muted">{description}</p>
+              <p className="lead text-lg text-slate-300">{description}</p>
 
               {slug === 'rtp' && (
             <>
@@ -181,7 +177,7 @@ export default async function ArticlePage({ params }: PageProps) {
           )}
 
           <h2 className="text-white">{locale === 'ru' ? 'Подробнее' : 'In detail'}</h2>
-          <p className="text-surface-muted">
+          <p className="text-slate-300">
             {locale === 'ru'
               ? 'В этом разделе — развёрнутое объяснение темы. Структура статьи рассчитана на 2000–3000 слов: введение, подзаголовки, таблицы при необходимости, внутренние ссылки на другие материалы кластера (стратегия, множители, бонусный раунд) и блок экспертизы ниже.'
               : 'This section holds the full explanation. The article is structured for 2000–3000 words: intro, subheadings, tables where needed, internal links to other cluster pages (strategy, multipliers, bonus round) and an expertise block below.'}
@@ -194,19 +190,19 @@ export default async function ArticlePage({ params }: PageProps) {
             </p>
           </Callout>
           <p className="text-surface-muted">
-            <Link href={`${base}/${PAGE_PATH}`} className="text-cta hover:text-cta-hover font-medium" prefetch>
+            <Link href={`${base}/${PAGE_PATH}`} className="text-violet-400 hover:text-white font-medium" prefetch>
               {locale === 'ru' ? 'Гайд Gates of Olympus' : 'Gates of Olympus guide'}
             </Link>
             {' · '}
-            <Link href={`${base}/${PAGE_PATH}/strategy`} className="text-cta hover:text-cta-hover font-medium" prefetch>
+            <Link href={`${base}/${PAGE_PATH}/strategy`} className="text-violet-400 hover:text-white font-medium" prefetch>
               {tNav('strategy')}
             </Link>
             {' · '}
-            <Link href={`${base}/${PAGE_PATH}/multipliers`} className="text-cta hover:text-cta-hover font-medium" prefetch>
+            <Link href={`${base}/${PAGE_PATH}/multipliers`} className="text-violet-400 hover:text-white font-medium" prefetch>
               {tNav('multipliers')}
             </Link>
             {' · '}
-            <Link href={`${base}/${PAGE_PATH}/bonus-round`} className="text-cta hover:text-cta-hover font-medium" prefetch>
+            <Link href={`${base}/${PAGE_PATH}/bonus-round`} className="text-violet-400 hover:text-white font-medium" prefetch>
               {tNav('bonusRound')}
             </Link>
           </p>
@@ -228,7 +224,7 @@ export default async function ArticlePage({ params }: PageProps) {
         />
 
         <div className="mt-10 flex justify-between text-sm">
-          <Link href={`${base}/${PAGE_PATH}`} className="text-cta hover:text-cta-hover transition-colors" prefetch>
+          <Link href={`${base}/${PAGE_PATH}`} className="text-violet-400 hover:text-white transition-colors" prefetch>
             ← {locale === 'ru' ? 'Назад к гайду' : 'Back to guide'}
           </Link>
         </div>

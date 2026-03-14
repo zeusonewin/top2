@@ -10,10 +10,10 @@ interface CalloutProps {
 }
 
 const variantStyles: Record<CalloutVariant, string> = {
-  info: 'border-sky-500/50 bg-sky-500/5',
-  tip: 'border-cta/50 bg-cta/5',
-  warning: 'border-amber-500/50 bg-amber-500/5',
-  default: 'border-surface-border bg-surface-elevated/80',
+  info: 'border-sky-500/30 bg-sky-500/5',
+  tip: 'border-violet-500/30 bg-violet-500/5',
+  warning: 'border-amber-500/30 bg-amber-500/5',
+  default: 'border-white/[0.08] bg-white/[0.04] backdrop-blur-xl',
 };
 
 export function Callout({ title, children, variant = 'default', className = '' }: CalloutProps) {
@@ -25,7 +25,7 @@ export function Callout({ title, children, variant = 'default', className = '' }
       {title && (
         <p className="text-sm font-semibold text-white mb-2">{title}</p>
       )}
-      <div className="text-sm text-surface-muted [&>p]:mb-2 [&>p:last-child]:mb-0">
+      <div className="text-sm text-slate-300 [&>p]:mb-2 [&>p:last-child]:mb-0">
         {children}
       </div>
     </aside>

@@ -89,7 +89,7 @@ export default async function GatesOfOlympusPillarPage() {
         subtitle={t('description')}
         ctaSlot={
           <>
-            <CtaButton variant="primary" microcopy={tCta('microcopy')} subid="pillar">
+            <CtaButton variant="primary" subid="pillar">
               {tCta('play')}
             </CtaButton>
             <TrustBlock />
@@ -134,10 +134,10 @@ export default async function GatesOfOlympusPillarPage() {
             <Link
               key={slug}
               href={`${base}/${PAGE_PATH}/${slug}`}
-              className="block p-5 rounded-xl border border-surface-border bg-surface-elevated/80 hover:border-cta/40 hover:bg-surface-elevated transition-all duration-200"
+              className="block p-5 rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] hover:border-violet-500/20 hover:shadow-glow transition-all duration-300"
               prefetch
             >
-              <span className="font-medium text-white group-hover:text-cta">{tNav(key)}</span>
+              <span className="font-medium text-white group-hover:text-violet-400">{tNav(key)}</span>
             </Link>
           ))}
         </nav>

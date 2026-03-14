@@ -13,7 +13,7 @@ interface QuickAnswerProps {
 export function QuickAnswer({ children, heading }: QuickAnswerProps) {
   return (
     <aside
-      className="my-6 rounded-xl border border-cta/30 bg-cta/5 p-5 md:p-6"
+      className="my-6 rounded-2xl border border-violet-500/20 bg-violet-500/5 backdrop-blur-xl p-5 md:p-6"
       aria-label={heading ?? 'Quick answer'}
     >
       {heading && (
@@ -21,7 +21,7 @@ export function QuickAnswer({ children, heading }: QuickAnswerProps) {
           {heading}
         </h2>
       )}
-      <div className="text-surface-muted leading-relaxed [&>p]:mb-2 [&>p:last-child]:mb-0">
+      <div className="text-slate-300 leading-relaxed [&>p]:mb-2 [&>p:last-child]:mb-0">
         {children}
       </div>
     </aside>

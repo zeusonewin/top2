@@ -28,7 +28,7 @@ export async function RelatedPosts({ slotId, posts }: RelatedPostsProps) {
   if (!posts.length) return null;
 
   return (
-    <aside className="mt-12 p-6 bg-surface-elevated/80 rounded-xl border border-surface-border">
+    <aside className="mt-12 p-6 backdrop-blur-xl bg-white/[0.04] rounded-2xl border border-white/[0.08]">
       <h2 className="text-lg font-semibold text-white mb-4">{tCommon('relatedArticles')}</h2>
       <ul className="grid gap-2 sm:grid-cols-2">
         {posts.map((post) => {
@@ -38,7 +38,7 @@ export async function RelatedPosts({ slotId, posts }: RelatedPostsProps) {
             <li key={post.slug}>
               <Link
                 href={href}
-                className="text-cta hover:text-cta-hover font-medium transition-colors"
+                className="text-violet-400 hover:text-white font-medium transition-colors"
                 prefetch
               >
                 {t(titleKey)}

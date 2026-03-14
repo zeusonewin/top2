@@ -4,13 +4,11 @@
 
 :root {
   --font-sans: system-ui, -apple-system, sans-serif;
-  --bg: #0f172a;
-  --bg-elevated: #1e293b;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --cta: #fbbf24;
-  --cta-hover: #f59e0b;
+  --bg: #0B0B0F;
+  --text: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #A855F7;
 }
 
 html {
@@ -24,46 +22,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Prose in articles — readable on dark */
+/* Prose in articles */
 .prose-dark {
   --tw-prose-body: #cbd5e1;
-  --tw-prose-headings: #f8fafc;
-  --tw-prose-links: #fbbf24;
-  --tw-prose-bold: #f8fafc;
+  --tw-prose-headings: #E5E7EB;
+  --tw-prose-links: #A855F7;
+  --tw-prose-bold: #E5E7EB;
 }
 
 .prose-dark h2 {
-  @apply border-b border-surface-border pb-2 mt-10 mb-4;
+  @apply border-b border-white/10 pb-2 mt-10 mb-4;
 }
 
 .prose-dark a {
-  @apply text-cta hover:text-cta-hover transition-colors;
+  @apply text-accent-violet hover:text-purple-400 transition-colors;
 }
 
 /* Table of Contents */
 .toc-link {
-  @apply text-white/70 hover:text-cta transition-all text-sm py-1 block border-l-2 border-transparent hover:border-cta hover:drop-shadow-[0_0_6px_rgba(251,191,36,0.25)] pl-3;
+  @apply text-slate-400 hover:text-white transition-all duration-300 text-sm py-1 block border-l-2 border-transparent hover:border-accent-violet pl-3;
 }
 
 /* Callout blocks */
 .callout {
-  @apply rounded-xl border border-surface-border bg-surface-elevated/80 p-5;
+  @apply rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5;
 }
 
-/* Glass (iPhone-style) */
-.glass {
-  @apply backdrop-blur-glass border border-white/10 bg-white/5;
-}
+/* Glass cards */
 .glass-card {
-  @apply backdrop-blur-glass-lg border border-white/10 bg-white/[0.07] shadow-glass;
-}
-.glass-card:hover {
-  @apply border-cta/20 bg-white/[0.1];
-}
-
-/* Premium gradient text for titles */
-.gradient-text {
-  @apply bg-gradient-to-r from-cta via-amber-200 to-cta bg-clip-text text-transparent;
+  @apply backdrop-blur-xl bg-white/[0.04] border border-white/[0.08] rounded-2xl;
 }
 
 /* Safe area for sticky CTA */

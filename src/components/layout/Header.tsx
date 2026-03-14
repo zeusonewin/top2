@@ -8,11 +8,11 @@ export async function Header() {
   const locale = await getLocale();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 backdrop-blur-[20px] bg-surface/80 supports-[backdrop-filter]:bg-surface/70">
+    <header className="sticky top-0 z-40 border-b border-white/[0.08] backdrop-blur-xl bg-[#0B0B0F]/80">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
         <Link
           href={`/${locale}`}
-          className="text-xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent hover:from-cta hover:to-amber-200 transition-all duration-300"
+          className="text-xl font-bold text-white hover:text-slate-300 transition-colors"
           prefetch
         >
           Olympus Slot
@@ -20,14 +20,14 @@ export async function Header() {
         <nav className="hidden md:flex items-center gap-8" aria-label="Main">
           <Link
             href={`/${locale}/gates-of-olympus`}
-            className="text-surface-muted hover:text-white transition-colors text-sm font-medium"
+            className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
             prefetch
           >
             {t('gatesOfOlympus')}
           </Link>
           <Link
             href={`/${locale}/about`}
-            className="text-surface-muted hover:text-white transition-colors text-sm font-medium"
+            className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
             prefetch
           >
             {t('about')}

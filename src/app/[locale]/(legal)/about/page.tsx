@@ -29,7 +29,7 @@ export default async function AboutPage() {
             : 'This site is an informational project about the Gates of Olympus slot by Pragmatic Play. We publish expert guides, RTP and volatility breakdowns, strategies and gameplay tips. Our goal is to help players understand the slot mechanics and make informed decisions.'}
         </p>
         <p>
-          <Link href={`${base}/author`} className="text-cta hover:text-cta-hover transition-colors" prefetch>
+          <Link href={`${base}/author`} className="text-violet-400 hover:text-white transition-colors" prefetch>
             {locale === 'ru' ? 'Об авторе' : 'About the author'} →
           </Link>
         </p>

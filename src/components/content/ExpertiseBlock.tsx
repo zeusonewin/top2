@@ -18,12 +18,12 @@ export async function ExpertiseBlock({ text }: ExpertiseBlockProps) {
       : 'Content is written by a team with experience in slot and casino analysis. We use official provider data and update articles regularly.';
 
   return (
-    <aside className="my-8 rounded-xl border border-surface-border bg-surface-elevated/80 p-5">
-      <p className="text-sm text-surface-muted">{text ?? defaultText}</p>
+    <aside className="my-8 rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] p-5">
+      <p className="text-sm text-slate-300">{text ?? defaultText}</p>
       <p className="mt-2 text-sm">
         <Link
           href={`/${locale}/author`}
-          className="font-medium text-cta hover:text-cta-hover transition-colors"
+          className="font-medium text-violet-400 hover:text-white transition-colors"
           prefetch
         >
           {locale === 'ru' ? 'Об авторе и экспертизе' : 'About the author & expertise'} →

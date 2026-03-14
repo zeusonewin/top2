@@ -17,10 +17,10 @@ export async function TableOfContents({ items, className = '' }: TableOfContents
 
   return (
     <nav
-      className={`rounded-xl border border-surface-border bg-surface-elevated/80 p-5 ${className}`}
+      className={`rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] p-5 ${className}`}
       aria-label={t('tableOfContents')}
     >
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-surface-muted mb-3">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
         {t('tableOfContents')}
       </h2>
       <ul className="space-y-0.5">

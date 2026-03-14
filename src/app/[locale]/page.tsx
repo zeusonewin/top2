@@ -110,7 +110,7 @@ export default async function HomePage() {
         title={title}
         subtitle={subtitle}
         primaryCta={
-          <CtaButton variant="primary" microcopy={t('microcopy')} subid="hero_primary">
+          <CtaButton variant="primary" subid="hero_primary">
             {t('playNow')}
           </CtaButton>
         }
@@ -124,7 +124,7 @@ export default async function HomePage() {
         guideLabel={tHome('readGuide')}
       />
 
-      <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-4 py-20 md:py-24">
         {/* Mobile ToC */}
         <div className="mb-10 lg:hidden">
           <HomeToC />
@@ -134,28 +134,28 @@ export default async function HomePage() {
           <div>
             {/* Quick Overview — стекло + премиум типографика */}
             <section id="quick-overview" className="scroll-mt-24">
-              <div className="rounded-2xl border border-white/10 backdrop-blur-[12px] bg-white/[0.07] p-6 md:p-8 shadow-glass">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent mb-4 md:text-3xl">
+              <div className="rounded-2xl border border-white/[0.08] backdrop-blur-xl bg-white/[0.04] p-6 md:p-8 shadow-glass">
+                <h2 className="text-2xl font-semibold text-white mb-4 md:text-3xl">
                   {tHome('quickOverviewTitle')}
                 </h2>
-                <p className="text-white/80 leading-relaxed text-base md:text-lg">
+                <p className="text-slate-300 leading-relaxed text-base md:text-lg">
                   {tHome('quickOverview')}
                 </p>
-                <p className="mt-4 text-white/70 text-sm md:text-base">
+                <p className="mt-4 text-slate-400 text-sm md:text-base">
                   {isRu ? 'Подробнее: ' : 'More: '}
-                  <Link href={pillarHref} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{isRu ? 'полный гайд' : 'full guide'}</Link>
+                  <Link href={pillarHref} className="text-violet-400 hover:text-white font-semibold transition-colors" prefetch>{isRu ? 'полный гайд' : 'full guide'}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/rtp`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('rtp')}</Link>
+                  <Link href={`${pillarHref}/rtp`} className="text-violet-400 hover:text-white font-semibold transition-colors" prefetch>{tNav('rtp')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/strategy`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('strategy')}</Link>
+                  <Link href={`${pillarHref}/strategy`} className="text-violet-400 hover:text-white font-semibold transition-colors" prefetch>{tNav('strategy')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/multipliers`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('multipliers')}</Link>
+                  <Link href={`${pillarHref}/multipliers`} className="text-violet-400 hover:text-white font-semibold transition-colors" prefetch>{tNav('multipliers')}</Link>
                   {' · '}
-                  <Link href={`${pillarHref}/demo`} className="text-cta hover:text-amber-200 font-semibold transition-colors" prefetch>{tNav('demo')}</Link>
+                  <Link href={`${pillarHref}/demo`} className="text-violet-400 hover:text-white font-semibold transition-colors" prefetch>{tNav('demo')}</Link>
                 </p>
                 <Link
                   href={pillarHref}
-                  className="mt-5 inline-flex items-center gap-2 text-cta hover:text-amber-200 font-bold transition-all hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]"
+                  className="mt-5 inline-flex items-center gap-2 text-violet-400 hover:text-white font-bold transition-all duration-300"
                   prefetch
                 >
                   {tHome('readGuide')}
@@ -165,7 +165,7 @@ export default async function HomePage() {
             </section>
 
             {/* Section cards grid */}
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-8">
+            <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:gap-8">
               {sectionCards.map((card) => (
                 <SectionCard
                   key={card.id}
@@ -179,8 +179,8 @@ export default async function HomePage() {
             </div>
 
             {/* Parameters table */}
-            <section id="params" className="mt-14 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-white mb-6 md:text-3xl">
+            <section id="params" className="mt-20 scroll-mt-24">
+              <h2 className="text-2xl font-semibold text-white mb-6 md:text-3xl">
                 {tHome('paramsTitle')}
               </h2>
               <RtpTable
@@ -189,7 +189,7 @@ export default async function HomePage() {
               />
               <Link
                 href={`${pillarHref}/rtp`}
-                className="mt-4 inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold text-sm"
+                className="mt-4 inline-flex items-center gap-2 text-violet-400 hover:text-white font-semibold text-sm transition-colors"
                 prefetch
               >
                 {tNav('rtp')} →
@@ -197,7 +197,7 @@ export default async function HomePage() {
             </section>
 
             {/* FAQ */}
-            <section id="faq" className="mt-14 scroll-mt-24">
+            <section id="faq" className="mt-20 scroll-mt-24">
               <FaqBlock
                 items={homeFaq.map((f) => ({ question: f.question, answer: f.answer }))}
                 id="faq"

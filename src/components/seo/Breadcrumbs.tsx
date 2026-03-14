@@ -14,7 +14,7 @@ export async function Breadcrumbs({ items }: BreadcrumbsProps) {
   const locale = await getLocale();
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-surface-muted mb-6">
+    <nav aria-label="Breadcrumb" className="text-sm text-slate-400 mb-6">
       <ol className="flex flex-wrap items-center gap-1" itemScope itemType="https://schema.org/BreadcrumbList">
         {items.map((item, i) => (
           <li
@@ -25,7 +25,7 @@ export async function Breadcrumbs({ items }: BreadcrumbsProps) {
             className="flex items-center gap-1"
           >
             {item.href ? (
-              <Link href={item.href} itemProp="item" className="hover:text-cta transition-colors" prefetch>
+              <Link href={item.href} itemProp="item" className="hover:text-violet-400 transition-colors" prefetch>
                 <span itemProp="name">{item.label}</span>
               </Link>
             ) : (
