@@ -1,5 +1,5 @@
 import { getTranslations, getLocale } from 'next-intl/server';
-import { buildMetadata, buildJsonLdWebPage, buildJsonLdOrganization, buildJsonLdFAQ } from '@/lib/seo';
+import { buildMetadata, buildJsonLdWebPage, buildJsonLdOrganization, buildJsonLdFAQ, buildJsonLdWebSite } from '@/lib/seo';
 import { HomeHero } from '@/components/home/HomeHero';
 import { ShortDescription } from '@/components/home/ShortDescription';
 import { QuickStats } from '@/components/home/QuickStats';
@@ -17,6 +17,7 @@ export async function generateMetadata() {
     description: t('description'),
     path: '',
     locale,
+    keywords: ['Gates of Olympus', 'demo slot', 'RTP 96.5%', 'Pragmatic Play', 'slot strategy'],
   });
 }
 
@@ -34,12 +35,14 @@ export default async function HomePage() {
     url: canonical,
   });
   const orgJsonLd = buildJsonLdOrganization();
+  const webSiteJsonLd = buildJsonLdWebSite(locale);
   const homeFaq = getHomeFaq(locale);
   const faqJsonLd = buildJsonLdFAQ(homeFaq);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 

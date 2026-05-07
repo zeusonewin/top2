@@ -16,6 +16,7 @@ export function buildMetadata({
   locale,
   imagePath = SITE_FAVICON_OG_IMAGE,
   noIndex = false,
+  keywords = [],
 }: {
   title: string;
   description: string;
@@ -23,6 +24,7 @@ export function buildMetadata({
   locale: Locale;
   imagePath?: string;
   noIndex?: boolean;
+  keywords?: string[];
 }): Metadata {
   const canonical = buildCanonical(path, locale);
   const ogImage = `${SITE_CONFIG.url}${imagePath}`;
@@ -30,6 +32,8 @@ export function buildMetadata({
   return {
     title,
     description,
+    keywords,
+    category: 'iGaming Guides',
     alternates: {
       canonical,
       languages: {
@@ -53,9 +57,20 @@ export function buildMetadata({
       description,
       images: [ogImage],
     },
+    authors: [{ name: SITE_CONFIG.name }],
     robots: noIndex
       ? { index: false, follow: false }
       : { index: true, follow: true, googleBot: { index: true, follow: true } },
+  };
+}
+
+export function buildJsonLdWebSite(locale: Locale) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_CONFIG.name,
+    url: `${SITE_CONFIG.url}/${locale}`,
+    inLanguage: locale,
   };
 }
 
