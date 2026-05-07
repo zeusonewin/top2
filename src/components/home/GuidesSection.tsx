@@ -19,7 +19,7 @@ export async function GuidesSection({ pillarHref }: GuidesSectionProps) {
   return (
     <section className="py-20" aria-label="Guides">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-2xl font-bold text-[#f4f4f5] mb-8">
+        <h2 className="mb-8 text-2xl font-bold text-[#f4f4f5] md:text-3xl">
           {t('guidesTitle')}
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -27,10 +27,14 @@ export async function GuidesSection({ pillarHref }: GuidesSectionProps) {
             <Link
               key={slug}
               href={`${pillarHref}/${slug}`}
-              className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-[#f4f4f5] hover:border-zinc-700 transition-colors block"
+              className="group block rounded-2xl border border-white/10 bg-gradient-to-br from-violet-500/10 via-slate-900/80 to-emerald-500/10 p-6 text-[#f4f4f5] transition-all hover:-translate-y-1 hover:border-emerald-400/50"
               prefetch
             >
-              <span className="font-semibold">{tNav(key)}</span>
+              <span className="text-sm text-slate-400">Guide</span>
+              <div className="mt-2 flex items-center justify-between">
+                <span className="font-semibold">{tNav(key)}</span>
+                <span className="text-emerald-300 transition-transform group-hover:translate-x-1">→</span>
+              </div>
             </Link>
           ))}
         </div>

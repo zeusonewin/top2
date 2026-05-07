@@ -11,11 +11,11 @@ export async function Header() {
   const pillar = `${base}/gates-of-olympus`;
 
   return (
-    <header className="sticky top-0 z-40 h-16 border-b border-zinc-800 bg-[#0e0e11]">
+    <header className="sticky top-0 z-40 h-16 border-b border-white/10 bg-[#0b0b10]/85 backdrop-blur-xl">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
         <Link
           href={base}
-          className="text-xl font-bold text-[#f4f4f5] hover:text-white transition-colors"
+          className="text-xl font-extrabold tracking-tight text-transparent bg-gradient-to-r from-violet-300 via-emerald-300 to-sky-300 bg-clip-text"
           prefetch
         >
           Olympus Slot
@@ -37,7 +37,7 @@ export async function Header() {
             {t('demo')}
           </Link>
           <LanguageSwitcher />
-          <CtaButton variant="primary" className="!rounded-lg !px-6 !py-3 !text-base !font-semibold" subid="header">
+          <CtaButton variant="primary" className="!rounded-xl !px-6 !py-3 !text-base !font-semibold !shadow-lg !shadow-emerald-500/20" subid="header">
             {tCta('playNow')}
           </CtaButton>
         </nav>

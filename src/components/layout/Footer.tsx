@@ -9,8 +9,13 @@ export async function Footer() {
   const pillar = `${base}/gates-of-olympus`;
 
   return (
-    <footer className="mt-auto border-t border-zinc-800 bg-[#0e0e11]">
+    <footer className="mt-auto border-t border-white/10 bg-[#090a0f]/90 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mb-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-slate-300">
+          {isRu
+            ? 'Информационный портал о слоте Gates of Olympus: стратегии, RTP, механика и демо-режим. Не является казино и не принимает ставки.'
+            : 'Informational portal about Gates of Olympus: strategy, RTP, mechanics and demo mode. Not a casino and does not accept bets.'}
+        </div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-[#a1a1aa] mb-4">

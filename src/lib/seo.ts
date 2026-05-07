@@ -71,6 +71,16 @@ export function buildJsonLdWebSite(locale: Locale) {
     name: SITE_CONFIG.name,
     url: `${SITE_CONFIG.url}/${locale}`,
     inLanguage: locale,
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE_CONFIG.url}/${locale}/gates-of-olympus/{search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -81,6 +91,7 @@ export function buildJsonLdOrganization() {
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
     description: SITE_CONFIG.description,
+    logo: `${SITE_CONFIG.url}${SITE_FAVICON_OG_IMAGE}`,
   };
 }
 
